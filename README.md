@@ -126,6 +126,6 @@ Foram criados **4 formulários completos**, com validação nativa (`required`, 
 
 1. **Clone este repositório:**
    ```bash
-   git clone https://github.com/ESTHER-rgb-hub/ong-project.git
+   git clone https://github.com/ESTHER-rgb-hub/ong-project-web.git
 
    
