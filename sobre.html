@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patas de Amor 🐾 | Sobre Nós</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img src="images/2.jpg" alt="Logo da ONG Patas de Amor" class="logo" />
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html" class="ativo">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="historia">
+      <h1>Quem Somos</h1>
+      <img src="img/equipe.jpg" alt="Equipe de voluntários da ONG Patas de Amor" loading="lazy" />
+      <p>
+        Desde 2015, a Patas de Amor vem escrevendo uma história de compaixão, 
+        coragem e compromisso com os animais em situação de vulnerabilidade. 
+        Nascemos do desejo profundo de transformar a realidade de cães e gatos abandonados, 
+        vítimas de maus-tratos, negligência e indiferença.
+        Somos uma organização sem fins lucrativos formada por voluntários apaixonados, 
+        que dedicam tempo, energia e afeto para oferecer uma nova chance a quem mais precisa.
+      </p>
+    </section>
+
+    <section class="missao">
+      <h2>Nossa Missão</h2>
+      <p>Proteger e dar voz aos animais vítimas de maus-tratos, garantindo-lhes respeito e dignidade.
+        Nosso propósito é construir um mundo onde nenhum animal seja tratado como objeto, 
+        onde o amor e o cuidado sejam a regra, não a exceção. Um mundo onde o respeito à vida animal seja parte essencial 
+        da nossa humanidade.
+      </p>
+    </section>
+
+    <section class="valores">
+      <h2>Nossos Valores</h2>
+      <ul>
+        <li>Amor e empatia pelos animais 🐾</li>
+        <li>Transparência e responsabilidade</li>
+        <li>Educação e conscientização social</li>
+      </ul>
+    </section>
+    <section class="impacto">
+  <h2>Nosso Impacto</h2>
+  <ul>
+    <li>🐶 Mais de 1.200 animais resgatados desde 2015</li>
+    <li>🏡 950 adoções responsáveis realizadas</li>
+    <li>🎓 80 ações educativas em escolas e comunidades</li>
+  </ul>
+</section>
+<section class="galeria">
+  <h2>Momentos que Tocam o Coração</h2>
+  <div class="carrossel">
+    <button class="anterior">&#10094;</button>
+  <div class="fotos">
+    <img src="images/4.png" alt="Cão resgatado" width="300" />
+    <img src="images/3.jpg" alt="Adoção feliz" width="300" />
+    <img src="images/5.jpg" alt="Evento de conscientização" width="300" />
+  </div>
+  <button class="proximo">&#10095;</button>
+  </div>
+  <script>
+  const fotos = document.querySelector('.fotos');
+  const imagens = document.querySelectorAll('.fotos img');
+  let index = 0;
+
+  document.querySelector('.proximo').addEventListener('click', () => {
+    index = (index + 1) % imagens.length;
+    fotos.style.transform = `translateX(-${index * 300}px)`;
+  });
+
+  document.querySelector('.anterior').addEventListener('click', () => {
+    index = (index - 1 + imagens.length) % imagens.length;
+    fotos.style.transform = `translateX(-${index * 300}px)`;
+  });
+</script>
+</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ONG Patas de Amor — Juntos por um mundo com mais compaixão.</p>
+  </footer>
+</body>
+</html>
