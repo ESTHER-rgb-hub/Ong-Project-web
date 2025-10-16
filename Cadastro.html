@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscrição em Projetos | ONG Patas de Amor</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* Estilo interno (pode ser movido para styles.css) */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #fafafa;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #7b2cbf;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      main {
+        max-width: 700px;
+        margin: 2rem auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      fieldset {
+        border: 2px solid #7b2cbf;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      legend {
+        font-weight: bold;
+        color: #7b2cbf;
+        padding: 0 0.5rem;
+      }
+
+      label {
+        display: block;
+        margin-top: 0.7rem;
+        font-weight: 500;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.6rem;
+        margin-top: 0.3rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      button {
+        background-color: #7b2cbf;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #5a189a;
+      }
+
+      @media (max-width: 600px) {
+        main {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Inscreva-se em Nossos Projetos</h1>
+      <p>Faça parte de uma causa que transforma vidas 🐶🐱</p>
+    </header>
+
+    <main>
+      <form action="#" method="post">
+        <!-- Dados Pessoais -->
+        <fieldset>
+          <legend>Dados Pessoais</legend>
+
+          <label for="nome">Nome Completo:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Seu nome completo"
+            required
+          />
+
+          <label for="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="seuemail@exemplo.com"
+            required
+          />
+
+          <label for="telefone">Telefone:</label>
+          <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            placeholder="(00) 00000-0000"
+            required
+          />
+        </fieldset>
+
+        <!-- Escolha do Projeto -->
+        <fieldset>
+          <legend>Escolha o Projeto</legend>
+
+          <label for="projeto">Selecione o projeto de interesse:</label>
+          <select id="projeto" name="projeto" required>
+            <option value="">Selecione...</option>
+            <option value="resgate">Resgate e Reabilitação</option>
+            <option value="adocao">Feira de Adoção</option>
+            <option value="educacao">Educação e Conscientização</option>
+            <option value="alimentacao">Doação de Alimentos</option>
+          </select>
+
+          <label for="disponibilidade">Disponibilidade:</label>
+          <select id="disponibilidade" name="disponibilidade" required>
+            <option value="">Selecione...</option>
+            <option value="semana">Durante a semana</option>
+            <option value="fim-de-semana">Finais de semana</option>
+            <option value="ambos">Ambos</option>
+          </select>
+        </fieldset>
+
+        <!-- Motivação -->
+        <fieldset>
+          <legend>Motivação</legend>
+          <label for="motivo">Por que você quer participar?</label>
+          <textarea
+            id="motivo"
+            name="motivo"
+            rows="5"
+            placeholder="Conte-nos um pouco sobre suas motivações..."
+            required
+          ></textarea>
+        </fieldset>
+
+        <!-- Termos -->
+        <fieldset>
+          <legend>Confirmação</legend>
+          <label>
+            <input type="checkbox" required />
+            Confirmo que li e aceito os termos de voluntariado da ONG Patas de Amor.
+          </label>
+        </fieldset>
+
+        <button type="submit">Enviar Inscrição</button>
+      </form>
+    </main>
+  </body>
+</html>
