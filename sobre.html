@@ -77,12 +77,12 @@
 
   document.querySelector('.proximo').addEventListener('click', () => {
     index = (index + 1) % imagens.length;
-    fotos.style.transform = translateX(-${index * 300}px);
+    fotos.style.transform = `translateX(-${index * 300}px)`;
   });
 
   document.querySelector('.anterior').addEventListener('click', () => {
     index = (index - 1 + imagens.length) % imagens.length;
-    fotos.style.transform = translateX(-${index * 300}px);
+    fotos.style.transform = `translateX(-${index * 300}px)`;
   });
 </script>
 </section>
@@ -93,5 +93,6 @@
   </footer>
 </body>
 </html>
+
 
 
