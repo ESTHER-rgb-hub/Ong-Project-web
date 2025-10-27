@@ -1,0 +1,263 @@
+:root {
+    --cor-primaria-escura: #99d502;
+    --cor-primaria: #1e8449;
+    --cor-secundaria: #f39c12;
+    --cor-fundo: #f2ed64;
+    --cor-caixas: #ffffff;
+    --cor-texto: #212529;
+    --cor-bordas: #dee2e6;
+
+    --fonte-h1: 2.5rem;
+    --fonte-h2: 2rem;
+    --fonte-h3: 1.5rem;
+    --fonte-corpo: 1rem;
+    --fonte-pequena: 0.875rem;
+
+    --espaco-p: 8px;
+    --espaco-m: 16px;
+    --espaco-g: 24px;
+    --espaco-gg: 48px;
+}
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto);
+        line-height: 1.6;
+    }
+
+header {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-caixas);
+    padding: var(--espaco-m) var(--espaco-g);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+header h1 {
+    font-size: var(--fonte-h1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--espaco-m);
+}
+
+nav a{
+    color: var(--cor-caixas);
+    text-decoration: none;
+    font-size: var(--fonte-corpo);
+    padding: var(--espaco-p) var(--espaco-m);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--cor-primaria);
+}
+
+main{
+    max-width: 960px;
+    margin: var(--espaco-gg);
+    padding: 0 var(--espaco-m);
+}
+
+section{
+    background-color: var(--cor-caixas);
+    padding: var(--espaco-g);
+    margin-bottom: var(--espaco-g);
+    border-radius: 8px;
+    border: 1px solid var(--cor-bordas);
+}
+
+footer {
+    background-color: var(--cor-texto); /* Fundo cinza escuro */
+    color: var(--cor-fundo); /* Texto cinza claro */
+    text-align: center;
+    padding: var(--espaco-g);
+}
+
+/* =================================== */
+/* 6. ESTILOS DE FORMULÁRIO           */
+/* =================================== */
+
+/* Estiliza a "caixa" do grupo */
+
+fieldset {
+    background-color: var(--cor-caixas);
+    border: 1px solid var(--cor-bordas);
+    border-radius: 8px;
+    padding: var(--espaco-g);
+    margin-bottom: var(--espaco-g);
+}
+
+/* Estiliza o título do grupo */
+legend {
+    font-size: var(--fonte-h3);
+    color: var(--cor-primaria-escura);
+    font-weight: bold;
+
+    /* Truque para alinhar: */
+    padding: 0 var(--espaco-p);
+    margin-left: var(--espaco-m);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: var(--espaco-p);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: var(--espaco-m);
+
+    border: 1px solid var(--cor-bordas);
+    border-radius: 5px;
+    font-size: var(--fonte-corpo);
+
+    /* Pega as cores do body, para garantir consistência */
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+button[type="submit"] {
+    display: block;
+    width: 100%;
+
+    background-color: var(--cor-primaria);
+    color: var(--cor-caixas);
+    font-size: var(--fonte-corpo);
+    font-weight: bold;
+        
+    padding: var(--espaco-m);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: var(--fonte-pequena);
+    font-weight: bold;
+    margin-top: -8px;
+    margin-bottom: var(--espaco-m);
+    min-height: 1.2em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: var(--espaco-g);
+
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+section h3 {
+    color: var(--cor-primaria);
+    margin-top: var(--espaco-g);
+    margin-bottom: var(--espaco-p);
+}
+
+section h4{
+    color: var(--cor-texto);
+    font-weight: bold;
+    margin-bottom: var(--espaco-p);
+}
+
+section ul{
+    list-style-position: inside;
+    margin-left: var(--espaco-m);
+    margin-bottom: var(--espaco-m);
+}
+
+section li {
+    margin-bottom: var(--espaco-p);
+}
+
+section a[href="cadastro.html"] {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-caixas);
+    text-decoration: none;
+    font-weight: bold;
+    padding: var(--espaco-m);
+    border-radius: 5px;
+    margin-top: var(--espaco-m);
+    transition: background-color 0.3s ease;
+}
+
+section a[href="cadastro.html"]:hover {
+    background-color: var(--cor-primaria-escura);
+}
+/* ================================ */
+/* 8. CARROSSEL DE IMAGENS             */
+/* =================================== */
+
+.carrossel {
+  position: relative;
+  width: 320px; /* ligeiramente maior que as imagens */
+  margin: 0 auto var(--espaco-gg);
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: var(--cor-caixas);
+}
+
+.fotos {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.fotos img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+/* Botões de navegação */
+.carrossel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(30, 132, 73, 0.8); /* tom da cor primária */
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.carrossel button:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+/* Posicionamento dos botões */
+.carrossel .anterior {
+  left: 10px;
+}
+
+.carrossel .proximo {
+  right: 10px;
+}
