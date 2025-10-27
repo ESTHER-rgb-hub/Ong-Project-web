@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body class="sobre">
   <header>
     <nav>
       <img src="images/2.jpg" alt="Logo da ONG Patas de Amor" class="logo" />
@@ -22,7 +22,6 @@
 
   <main>
     <section class="historia">
-      <body class="sobre">  
       <h1>Quem Somos</h1>
       <p>
         Desde 2015, a Patas de Amor vem escrevendo uma história de compaixão, 
@@ -33,7 +32,7 @@
         que dedicam tempo, energia e afeto para oferecer uma nova chance a quem mais precisa.
       </p>
     </section>
-      </body>
+
     <section class="missao">
       <h2>Nossa Missão</h2>
       <p>Proteger e dar voz aos animais vítimas de maus-tratos, garantindo-lhes respeito e dignidade.
@@ -62,13 +61,13 @@
 <section class="galeria">
   <h2>Momentos que Tocam o Coração</h2>
   <div class="carrossel">
-    <button class="anterior">&#10094;</button>
+    <button class="anterior">❮</button>
   <div class="fotos">
     <img src="images/4.png" alt="Cão resgatado" width="300" />
     <img src="images/3.jpg" alt="Adoção feliz" width="300" />
     <img src="images/5.jpg" alt="Evento de conscientização" width="300" />
   </div>
-  <button class="proximo">&#10095;</button>
+  <button class="proximo">❯</button>
   </div>
   <script>
   const fotos = document.querySelector('.fotos');
@@ -77,19 +76,19 @@
 
   document.querySelector('.proximo').addEventListener('click', () => {
     index = (index + 1) % imagens.length;
-    fotos.style.transform = `translateX(-${index * 300}px)`;
+    fotos.style.transform = translateX(-${index * 300}px);
   });
 
   document.querySelector('.anterior').addEventListener('click', () => {
     index = (index - 1 + imagens.length) % imagens.length;
-    fotos.style.transform = `translateX(-${index * 300}px)`;
+    fotos.style.transform = translateX(-${index * 300}px);
   });
 </script>
 </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 ONG Patas de Amor — Juntos por um mundo com mais compaixão.</p>
+    <p>© 2025 ONG Patas de Amor — Juntos por um mundo com mais compaixão.</p>
   </footer>
 </body>
 </html>
