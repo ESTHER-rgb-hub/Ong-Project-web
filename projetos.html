@@ -3,65 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patas de Amor 🐾 | Projetos</title>
+  <title>Patas de Amor 🐾 | Sobre Nós</title>
   <link rel="stylesheet" href="css/style.css" />
+  
   <script src="script.js" defer></script>
 </head>
 
-<body class="projetos">
+<body class="sobre">
   <header>
     <nav>
-      <img src="images/10.jpg" alt="Logo da ONG Patas de Amor" class="logo" width="500" />
+      <img src="images/2.jpg" alt="Logo da ONG Patas de Amor" class="logo" />
       <ul class="menu">
         <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="projetos.html" class="ativo">Projetos</a></li>
+        <li><a href="sobre.html" class="ativo">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
         <li><a href="Cadastro.html">Inscreva-se</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-<section class="projeto">
-  <img src="images/7.jpg" alt="Veterinário cuidando de um cachorro" loading="lazy" width="300"/>
-  <h2>Projeto Recomeço</h2>
-  <p>
-    O Projeto Recomeço é uma iniciativa dedicada à recuperação integral de animais vítimas de abandono e maus-tratos. 
-    Nosso compromisso vai além do resgate: oferecemos cuidados médicos especializados, acompanhamento psicológico e 
-    um ambiente seguro para que cada cão e gato possa se reerguer física e emocionalmente. 
-    Acreditamos que todo animal merece uma segunda chance — e trabalhamos incansavelmente para que essa nova etapa 
-    seja marcada por dignidade, afeto e esperança. Quando estão prontos, iniciamos o processo de adoção responsável, 
-    conectando-os a famílias que compartilham dos nossos valores.
-  </p>
-</section>
+    <section class="historia">
+      <h1>Quem Somos</h1>
+      <p>
+        Desde 2015, a Patas de Amor vem escrevendo uma história de compaixão, 
+        coragem e compromisso com os animais em situação de vulnerabilidade. 
+        Nascemos do desejo profundo de transformar a realidade de cães e gatos abandonados, 
+        vítimas de maus-tratos, negligência e indiferença.
+        Somos uma organização sem fins lucrativos formada por voluntários apaixonados, 
+        que dedicam tempo, energia e afeto para oferecer uma nova chance a quem mais precisa.
+      </p>
+    </section>
 
-<section class="projeto">
-  <img src="images/6.jpg" alt="Evento de adoção de cães" loading="lazy" width="500" />
-  <h2>Feiras de Adoção</h2>
-  <p>
-    Nossas Feiras de Adoção são eventos mensais realizados em praças públicas, centros comerciais e espaços parceiros. 
-    Elas têm como objetivo principal encontrar lares amorosos para os animais resgatados, promovendo encontros entre 
-    os peludos e seus futuros tutores. Além da adoção, os eventos contam com orientação sobre guarda responsável, 
-    vacinação, microchipagem e até atividades educativas para crianças. Cada feira é uma celebração da vida e da 
-    chance de recomeçar — tanto para os animais quanto para as famílias que os acolhem.
-  </p>
-</section>
+    <section class="missao">
+      <h2>Nossa Missão</h2>
+      <p>Proteger e dar voz aos animais vítimas de maus-tratos, garantindo-lhes respeito e dignidade.
+        Nosso propósito é construir um mundo onde nenhum animal seja tratado como objeto, 
+        onde o amor e o cuidado sejam a regra, não a exceção. Um mundo onde o respeito à vida animal seja parte essencial 
+        da nossa humanidade.
+      </p>
+    </section>
 
-<section class="projeto">
-  <img src="images/8.jpg" alt="Crianças aprendendo sobre respeito animal" loading="lazy" width="500"/>
-  <h2>Educação Animal</h2>
-  <p>
-    Levamos palestras e oficinas educativas às escolas, ensinando empatia e respeito aos animais desde a infância. 
-    Por meio de atividades lúdicas, histórias reais e a presença de animais resgatados, promovemos a formação de 
-    cidadãos conscientes e comprometidos com o bem-estar animal.
-  </p>
+    <section class="valores">
+      <h2>Nossos Valores</h2>
+      <ul>
+        <li>Amor e empatia pelos animais 🐾</li>
+        <li>Transparência e responsabilidade</li>
+        <li>Educação e conscientização social</li>
+      </ul>
+    </section>
+    <section class="impacto">
+  <h2>Nosso Impacto</h2>
+  <ul>
+    <li>🐶 Mais de 1.200 animais resgatados desde 2015</li>
+    <li>🏡 950 adoções responsáveis realizadas</li>
+    <li>🎓 80 ações educativas em escolas e comunidades</li>
+  </ul>
+</section>
+<section class="galeria">
+  <h2>Momentos que Tocam o Coração</h2>
+  <div class="carrossel">
+    <button class="anterior">❮</button>
+  <div class="fotos">
+    <img src="images/4.png" alt="Cão resgatado" width="300" />
+    <img src="images/3.jpg" alt="Adoção feliz" width="300" />
+    <img src="images/5.jpg" alt="Evento de conscientização" width="300" />
+  </div>
+  <button class="proximo">❯</button>
+  </div>
+  
+  <script>
+  const fotos = document.querySelector('.fotos');
+  const imagens = document.querySelectorAll('.fotos img');
+  let index = 0;
+
+  document.querySelector('.proximo').addEventListener('click', () => {
+    index = (index + 1) % imagens.length;
+    // CORRIGIDO:
+    fotos.style.transform = `translateX(-${index * 300}px)`;
+  });
+
+  document.querySelector('.anterior').addEventListener('click', () => {
+    index = (index - 1 + imagens.length) % imagens.length;
+    // CORRIGIDO:
+    fotos.style.transform = `translateX(-${index * 300}px)`;
+  });
+</script>
 </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 ONG Patas de Amor — Cada patinha merece um lar.</p>
+    <p>© 2025 ONG Patas de Amor — Juntos por um mundo com mais compaixão.</p>
   </footer>
 </body>
 </html>
-
-
