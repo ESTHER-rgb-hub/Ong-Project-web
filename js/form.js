@@ -1,59 +1,65 @@
-// js/form.js
+// form.js — Validação e Máscaras do Formulário
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
+  const form = document.getElementById("cadastroForm");
+  const cpf = document.getElementById("cpf");
+  const telefone = document.getElementById("telefone");
+  const cep = document.getElementById("cep");
 
-  if (!form) return; // Só roda na página de cadastro
+  // Máscaras de input
+  const aplicarMascara = (input, tipo) => {
+    let value = input.value.replace(/\D/g, "");
 
-  const campos = {
-    nome: /^[A-Za-zÀ-ÿ\s]{3,}$/,
-    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-    cpf: /^\d{3}\.\d{3}\.\d{3}-\d{2}$/,
-    telefone: /^\(\d{2}\)\s?\d{4,5}-\d{4}$/,
-    cep: /^\d{5}-\d{3}$/
-  };
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let valido = true;
-
-    for (const campo in campos) {
-      const input = form.querySelector(`#${campo}`);
-      if (!campos[campo].test(input.value)) {
-        valido = false;
-        input.classList.add("erro");
-      } else {
-        input.classList.remove("erro");
-      }
+    if (tipo === "cpf") {
+      if (value.length > 11) value = value.slice(0, 11);
+      input.value = value
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
     }
 
+    if (tipo === "telefone") {
+      if (value.length > 11) value = value.slice(0, 11);
+      input.value = value
+        .replace(/^(\d{2})(\d)/g, "($1) $2")
+        .replace(/(\d{5})(\d{4})$/, "$1-$2");
+    }
+
+    if (tipo === "cep") {
+      if (value.length > 8) value = value.slice(0, 8);
+      input.value = value.replace(/(\d{5})(\d)/, "$1-$2");
+    }
+  };
+
+  // Aplica máscaras dinamicamente
+  cpf.addEventListener("input", () => aplicarMascara(cpf, "cpf"));
+  telefone.addEventListener("input", () => aplicarMascara(telefone, "telefone"));
+  cep.addEventListener("input", () => aplicarMascara(cep, "cep"));
+
+  // Validação do formulário
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const campos = form.querySelectorAll("input[required], select[required], textarea[required]");
+    let valido = true;
+
+    campos.forEach((campo) => {
+      if (!campo.value.trim()) {
+        campo.classList.add("erro");
+        valido = false;
+      } else {
+        campo.classList.remove("erro");
+      }
+    });
+
     if (!valido) {
-      alert("⚠️ Por favor, corrija os campos destacados antes de enviar.");
+      alert("⚠️ Por favor, preencha todos os campos obrigatórios corretamente!");
       return;
     }
 
-    // Salva no armazenamento local
-    const dados = Object.fromEntries(new FormData(form));
-    localStorage.setItem("cadastro", JSON.stringify(dados));
-
-    alert("✅ Inscrição enviada com sucesso!");
+    // Se estiver tudo certo
+    alert("✅ Cadastro enviado com sucesso! Obrigado por fazer parte da ONG Patas de Amor 💚");
     form.reset();
   });
-
-  // Máscaras automáticas
-  const mask = (campo, padrao) => {
-    campo.addEventListener("input", (e) => {
-      let v = e.target.value.replace(/\D/g, "");
-      let r = "";
-      let i = 0;
-      for (const c of padrao) {
-        r += c === "#" ? (v[i++] || "") : c;
-        if (i >= v.length) break;
-      }
-      e.target.value = r;
-    });
-  };
-
-  mask(form.cpf, "###.###.###-##");
-  mask(form.telefone, "(##) #####-####");
-  mask(form.cep, "#####-###");
 });
+
+ 
