@@ -3,28 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inscrição em Projetos | ONG Patas de Amor</title>
+  <title>Cadastro | ONG Patas de Amor</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body class="cadastro">
   <header>
-    <h1>🐾 ONG Patas de Amor</h1>
     <nav>
-      <a href="index.html">Início</a>
-      <a href="cadastro.html">Cadastro</a>
-      <a href="inscricao.html" class="ativo">Inscrição em Projetos</a>
-      <a href="contato.html">Contato</a>
+      <h1>🐾 ONG Patas de Amor</h1>
+      <ul class="menu">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="cadastro.html" class="ativo">Cadastro</a>
+      </ul>
     </nav>
   </header>
 
   <main>
     <section class="form-section">
-      <h2>cadastro</h2>
-      <p>Preencha o formulário abaixo para participar dos projetos da nossa ONG.</p>
+      <h2>Cadastro</h2>
+      <p>Preencha o formulário abaixo para se cadastrar na ONG Patas de Amor 💚</p>
 
       <form id="cadastroForm" class="formulario">
         <fieldset>
           <legend>Dados Pessoais</legend>
+
           <label for="nome">Nome Completo:</label>
           <input type="text" id="nome" name="nome" required>
 
@@ -43,6 +48,7 @@
 
         <fieldset>
           <legend>Endereço</legend>
+
           <label for="endereco">Endereço:</label>
           <input type="text" id="endereco" name="endereco" required>
 
@@ -56,35 +62,18 @@
           <input type="text" id="estado" name="estado" maxlength="2" placeholder="UF" required>
         </fieldset>
 
-        <fieldset>
-          <legend>Seleção de Projeto</legend>
-          <label for="projeto">Projeto de Interesse:</label>
-          <select id="projeto" name="projeto" required>
-            <option value="">Selecione...</option>
-            <option value="resgate">Resgate de Animais</option>
-            <option value="educacao">Educação Comunitária</option>
-            <option value="doacao">Campanha de Doação</option>
-            <option value="abrigo">Apoio ao Abrigo</option>
-          </select>
-
-          <label for="motivacao">Por que deseja participar?</label>
-          <textarea id="motivacao" name="motivacao" rows="4" placeholder="Conte-nos o que te motiva..." required></textarea>
-        </fieldset>
-
-        <button type="submit">Enviar Inscrição</button>
+        <button type="submit">Enviar Cadastro</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 ONG Patas de Amor | Todos os direitos reservados</p>
+    <p>© 2025 ONG Patas de Amor — Unidos contra os maus-tratos aos animais.</p>
   </footer>
-
-  <!-- ✅ Scripts corretos -->
-  <script type="module" src="js/app.js"></script>
-  <script type="module" src="js/form.js"></script>
 </body>
 </html>
+
+
 
 
 
